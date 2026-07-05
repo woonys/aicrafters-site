@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Crafters — 사람의 하루를 다듬는 AI 앱을 만듭니다</title>
+<meta name="description" content="AI Crafters는 AI 기술로 일상의 건강과 습관을 돕는 모바일 앱을 만드는 앱 스튜디오입니다. 대표작: 쪼밍(JJOMING) 케겔 운동 습관 앱." />
+<meta property="og:title" content="AI Crafters" />
+<meta property="og:description" content="사람의 하루를 다듬는 AI 앱을 만드는 앱 스튜디오." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://aicrafters.kr" />
+<style>
+  :root{
+    --ink:#1a1c22; --muted:#5c6270; --line:#e9ebf0;
+    --peach:#ff9e7d; --mint:#57c9a3; --bg:#fbfbfd; --card:#ffffff;
+    --sun:#ffd24c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",Roboto,"Noto Sans KR",sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  /* nav */
+  header{position:sticky;top:0;background:rgba(251,251,253,.82);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);z-index:10}
+  nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.02em}
+  .logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--peach),var(--sun));display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px}
+  .navlinks{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+  .navlinks a{text-decoration:none}
+  .navlinks a:hover{color:var(--ink)}
+  @media(max-width:640px){.navlinks{display:none}}
+  /* hero */
+  .hero{padding:96px 0 72px;text-align:center}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--mint);background:#eafaf4;border:1px solid #d3f1e6;padding:6px 14px;border-radius:999px;margin-bottom:24px}
+  h1{font-size:clamp(32px,5.5vw,56px);line-height:1.12;letter-spacing:-.03em;font-weight:800}
+  h1 .accent{background:linear-gradient(120deg,var(--peach),var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{margin:22px auto 0;max-width:620px;font-size:18px;color:var(--muted)}
+  .cta{margin-top:36px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .12s ease,box-shadow .12s ease}
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{transform:translateY(-1px)}
+  .btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+  /* sections */
+  section{padding:64px 0}
+  .sec-title{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  h2{font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em;font-weight:800;line-height:1.2}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .card h3{font-size:17px;margin-bottom:8px;letter-spacing:-.01em}
+  .card p{font-size:14.5px;color:var(--muted)}
+  .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:16px}
+  /* product */
+  .product{display:flex;gap:40px;align-items:center;background:linear-gradient(180deg,#fff,#fff8f5);border:1px solid var(--line);border-radius:24px;padding:40px}
+  @media(max-width:760px){.product{flex-direction:column;text-align:center;padding:32px 24px}}
+  .pelly{width:120px;height:120px;border-radius:28px;background:linear-gradient(135deg,#fff0e8,#eafaf4);display:grid;place-items:center;font-size:60px;flex:none;box-shadow:0 10px 30px rgba(255,158,125,.18)}
+  .product h3{font-size:24px;letter-spacing:-.02em}
+  .product .tag{font-size:13px;color:var(--mint);font-weight:600;margin-bottom:6px}
+  .product p{color:var(--muted);margin:10px 0 18px;max-width:520px}
+  /* contact */
+  .contact{text-align:center;background:var(--ink);color:#fff;border-radius:24px;padding:56px 24px}
+  .contact h2{color:#fff}
+  .contact p{color:#b9bdc9;margin-top:12px}
+  .contact a.mail{display:inline-block;margin-top:22px;font-size:20px;font-weight:700;color:#fff;text-decoration:none;border-bottom:2px solid var(--peach);padding-bottom:3px}
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:36px 0;margin-top:24px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13.5px;color:var(--muted)}
+  .foot a{text-decoration:none}
+  .foot a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand"><span class="logo">AC</span> AI&nbsp;Crafters</div>
+      <div class="navlinks">
+        <a href="#about">소개</a>
+        <a href="#products">제품</a>
+        <a href="#contact">연락처</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">App Studio · Seoul</span>
+      <h1>사람의 하루를<br/><span class="accent">다듬는 AI 앱</span>을 만듭니다</h1>
+      <p class="lead">AI Crafters는 AI 기술로 일상의 건강과 습관을 돕는 모바일 앱을 만드는 앱 스튜디오입니다. 작지만 매일 쓰게 되는, 다정한 제품을 지향합니다.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#products">제품 보기</a>
+        <a class="btn btn-ghost" href="#contact">문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-title">무엇을 하나요</div>
+      <h2>습관이 되는 건강 앱을,<br/>빠르고 정성스럽게.</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="ico" style="background:#fff0e8">🧩</div>
+          <h3>앱 스튜디오</h3>
+          <p>기획부터 디자인·개발·출시·운영까지 한 팀이 책임지고 완성합니다. 아이디어를 빠르게 실제 제품으로 만듭니다.</p>
+        </div>
+        <div class="card">
+          <div class="ico" style="background:#eafaf4">🌱</div>
+          <h3>건강 &amp; 습관</h3>
+          <p>매일의 작은 실천이 쌓이도록. 운동·웰니스 영역에서 꾸준함을 돕는 경험을 설계합니다.</p>
+        </div>
+        <div class="card">
+          <div class="ico" style="background:#fff7dd">✨</div>
+          <h3>다정한 디자인</h3>
+          <p>명령이 아니라 응원하는 톤. 캐릭터와 부드러운 인터랙션으로 부담 없이 이어가게 합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="sec-title">제품</div>
+      <div class="product">
+        <div class="pelly">🐤</div>
+        <div>
+          <div class="tag">iOS · 건강 &amp; 피트니스</div>
+          <h3>쪼밍 (JJOMING)</h3>
+          <p>Pelly 마스코트와 함께하는 케겔 운동 습관 관리 앱. 차분한 호흡 가이드, 연속 스트릭, 저녁 리마인더로 매일의 골반저근 운동을 이어가게 돕습니다.</p>
+          <a class="btn btn-primary" href="https://apps.apple.com/app/id6741137991" target="_blank" rel="noopener">App Store에서 보기 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div class="sec-title" style="color:#8a90a0">Contact</div>
+        <h2>함께 만들 이야기가 있다면</h2>
+        <p>제휴·문의는 이메일로 편하게 연락 주세요.</p>
+        <a class="mail" href="mailto:woony.kim@aicrafters.kr">woony.kim@aicrafters.kr</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>© 2026 AI Crafters. All rights reserved.</div>
+      <div><a href="/privacy.html">개인정보처리방침</a> &nbsp;·&nbsp; <a href="https://aicrafters.kr">aicrafters.kr</a></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
