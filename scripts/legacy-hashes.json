@@ -1,0 +1,5 @@
+{
+  "_comment": "2026-10-01 legacy-site 브랜치(16af3e5) 원본과 라이브 응답에서 고정한 값. 앱스토어·AdMob이 참조하는 URL이라 바이트가 바뀌면 빌드를 실패시킨다. 의도적으로 바꿀 때만 이 값을 갱신한다.",
+  "privacy.html": "5cd1a27c2c5738bb1203e7f0c1f61c10cb618854e1bf5054ca00190b770aa90a",
+  "app-ads.txt": "66df262a80f697356fe925b0e3d46569157f7f0ccf5f456e7a4f484bffd6f60a"
+}
