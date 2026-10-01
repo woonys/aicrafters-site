@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { JuhyuCalculator } from "./Calculator";
 import { Sources } from "@/components/Sources";
+import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "주휴수당 계산기 (2026·2027 최저시급 반영)",
@@ -25,6 +26,7 @@ export default function Page() {
 
       <JuhyuCalculator />
       <Sources />
+      <AdSlot />
 
       <h2>계산 방법</h2>
       <p>주휴수당은 &ldquo;주 소정근로시간 ÷ 40 × 8 × 시급&rdquo;으로 계산합니다. 40시간을 넘는 부분은 연장근로라서 넣지 않으므로 최대 8시간분입니다.</p>

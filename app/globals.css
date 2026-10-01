@@ -237,3 +237,11 @@ article.prose .notice + form, article.prose form { margin-top: 24px; }
 .form { gap: 32px; }
 .sources { font-size: 14px; line-height: 22px; }
 .formula .small { font-size: 14px; line-height: 22px; }
+
+/* ---------- 광고 (AdSense) ---------- */
+/* 채워지기 전·실패 시에는 높이 0, 채워졌을 때만 구획과 "광고" 레이블을 보인다 */
+.ad-slot { margin: 0; }
+.ad-slot .ad-label { display: none; font-size: 12px; font-weight: 600; color: var(--grey-600); letter-spacing: 0; margin-bottom: 6px; }
+.ad-slot ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; }
+.ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) { margin: 40px 0; padding-top: 16px; border-top: 1px solid var(--grey-100); }
+.ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-label { display: block; }
