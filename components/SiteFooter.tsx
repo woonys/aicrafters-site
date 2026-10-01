@@ -6,6 +6,8 @@ export function SiteFooter() {
     <footer className="footer">
       <div className="wrap">
         <nav className="links" aria-label="사이트 정보">
+          <Link href="/blog/">블로그</Link>
+          <a href="/rss.xml">RSS</a>
           <Link href="/about/">운영자 소개</Link>
           <Link href="/contact/">문의</Link>
           <Link href="/terms/">이용약관</Link>

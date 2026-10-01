@@ -177,7 +177,7 @@ export function JuhyuCalculator() {
 
       <fieldset className="q">
         <legend className="t3">주휴일까지 계속 고용된 상태인가요?</legend>
-        <p className="caption">금요일까지 일하고 그만둬도 퇴사일이 주휴일(보통 일요일) 이후라면 &lsquo;네&rsquo;예요.</p>
+        <p className="caption">금요일에 마지막으로 출근해도 일요일(주휴일)까지 재직한 것으로 처리되면 &lsquo;네&rsquo;예요.</p>
         <Choices name={`${id}-emp`} value={employed} onChange={setEmployed} options={[["yes", "네"], ["no", "그 전에 퇴사해요"], ["unknown", "잘 모르겠어요"]]} />
       </fieldset>
 
