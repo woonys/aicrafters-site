@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <article className="doc">
-      <h1>문의</h1>
+    <article className="narrow prose">
+      <h1 className="t1">문의</h1>
       <p>
         이메일: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
       </p>

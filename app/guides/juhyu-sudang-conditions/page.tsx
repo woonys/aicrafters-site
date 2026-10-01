@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <article className="doc">
+    <article className="narrow prose">
       <div className="crumbs">
         <Link href="/guides/">가이드</Link> › 주휴수당 조건
       </div>
-      <h1>주휴수당 받는 조건 3가지와 헷갈리는 사례</h1>
+      <h1 className="t1">주휴수당 받는 조건 3가지와 헷갈리는 사례</h1>
       <p className="meta">2026-10-01 기준 · 근로기준법 제55조, 제18조 제3항, 시행령 제30조</p>
 
       <p>
@@ -32,7 +32,7 @@ export default function Page() {
 
       <h2>조건 2. 그 주의 소정근로일 개근</h2>
       <p>계약상 출근하기로 한 날에 모두 출근해야 합니다. 자주 묻는 경우를 정리하면 다음과 같습니다.</p>
-      <table>
+      <div className="table-wrap"><table>
         <thead>
           <tr><th>상황</th><th>결근인가</th></tr>
         </thead>
@@ -41,7 +41,7 @@ export default function Page() {
           <tr><td>연차휴가 사용</td><td>아니오</td></tr>
           <tr><td>무단으로 하루 빠짐</td><td>예 → 그 주 주휴수당 없음</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <p>결근이 있으면 그 주의 주휴수당만 생기지 않습니다. 다음 주에 개근하면 다음 주에는 다시 생깁니다.</p>
 
       <h2>조건 3. 주휴일까지 근로관계 유지</h2>

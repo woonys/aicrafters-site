@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <article className="doc">
-      <h1>운영자 소개</h1>
-      <table>
+    <article className="narrow prose">
+      <h1 className="t1">운영자 소개</h1>
+      <div className="table-wrap"><table>
         <tbody>
           <tr><th>상호</th><td>AI Crafters (에이아이크래프터스)</td></tr>
           <tr><th>대표</th><td>김재운</td></tr>
@@ -19,7 +19,7 @@ export default function Page() {
           <tr><th>업종</th><td>응용 소프트웨어 개발 및 공급</td></tr>
           <tr><th>이메일</th><td><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></td></tr>
         </tbody>
-      </table>
+      </table></div>
       <p>
         AI Crafters는 일상의 건강과 습관을 돕는 모바일 앱(쪼밍 등)을 만드는 앱 스튜디오입니다. 대표는 백엔드·AI 플랫폼
         개발자로 일해 왔고, 그 경험으로 사람들이 자주 헷갈리는 계산을 정확하게 해 주는 생활 계산기를 만들고 있습니다.

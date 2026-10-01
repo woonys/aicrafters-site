@@ -13,11 +13,19 @@ export const metadata: Metadata = {
   other: { "build-sha": process.env.NEXT_PUBLIC_BUILD_SHA ?? "local" },
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#ffffff" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
+      <head>
+        {/* Pretendard (SIL OFL). 사용하는 글자만 내려받는 dynamic subset */}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+      </head>
       <body>
         <SiteHeader />
         <main>{children}</main>
