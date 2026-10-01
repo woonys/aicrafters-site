@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { ADSENSE_CLIENT } from "@/lib/ads";
+import Script from "next/script";
+import { ADSENSE_CLIENT, GA4_MEASUREMENT_ID } from "@/lib/ads";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 import { JsonLd, ORG_ID, SITE_ID } from "@/lib/jsonld";
 import "./globals.css";
@@ -34,6 +35,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        {/* GA4: 향상된 측정이 켜져 있어 클라이언트 라우팅(history 변경)도 page_view 로 잡힌다 */}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`} strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","${GA4_MEASUREMENT_ID}");`}
+        </Script>
         <JsonLd data={{ "@type": "Organization", "@id": ORG_ID, name: "AI Crafters", alternateName: "에이아이크래프터스", url: SITE_URL, email: CONTACT_EMAIL, founder: { "@type": "Person", name: "김재운" } }} />
         <JsonLd data={{ "@type": "WebSite", "@id": SITE_ID, name: "AI Crafters", url: SITE_URL, inLanguage: "ko-KR", publisher: { "@id": ORG_ID } }} />
       </body>
