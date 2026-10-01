@@ -12,20 +12,15 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <article className="doc">
+    <article className="narrow prose">
       <div className="crumbs">
         <Link href="/tools/">생활 계산기</Link> › 주휴수당
       </div>
-      <h1>주휴수당 계산기</h1>
-      <p className="meta">2026년 최저시급 10,320원 · 2027년 10,700원 반영</p>
-      <p>
-        1주에 정해진 근무일을 모두 채우면 하루치 임금을 유급휴일 수당으로 더 받습니다. 이것이 주휴수당입니다. 시급과
-        계약상 근무시간을 넣으면 이번 주 예상액과 계산식을 보여줍니다.
-      </p>
-      <div className="note">
-        이 계산기는 <strong>매주 근무시간이 같고</strong>, 사업장의 풀타임 기준이 <strong>주 5일·40시간</strong>인 경우를
-        계산합니다. 주마다 시간이 바뀌거나 교대제처럼 기준이 다른 경우에는 결과를 내지 않고 &lsquo;판정 불가&rsquo;로
-        안내합니다.
+      <h1 className="t1">주휴수당 계산기</h1>
+      <p className="meta">2026 최저시급 10,320원 · 2027 10,700원 반영</p>
+      <p className="lead-sm">시급과 계약상 근무시간으로 이번 주 예상 주휴수당과 계산식을 확인하세요.</p>
+      <div className="notice notice-sm">
+        <strong>매주 근무시간이 같고</strong>, 풀타임 기준이 <strong>주 5일·40시간</strong>인 사업장을 계산해요. 그 밖의 경우는 &lsquo;판정 불가&rsquo;로 안내해요.
       </div>
 
       <JuhyuCalculator />
@@ -33,7 +28,7 @@ export default function Page() {
 
       <h2>계산 방법</h2>
       <p>주휴수당은 &ldquo;주 소정근로시간 ÷ 40 × 8 × 시급&rdquo;으로 계산합니다. 40시간을 넘는 부분은 연장근로라서 넣지 않으므로 최대 8시간분입니다.</p>
-      <table>
+      <div className="table-wrap"><table>
         <thead>
           <tr>
             <th>주 근무시간</th>
@@ -49,7 +44,7 @@ export default function Page() {
           <tr><td>40시간 (8시간×5일)</td><td>8시간</td><td>82,560원</td></tr>
           <tr><td>14시간</td><td>—</td><td>대상 아님 (15시간 미만)</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <h2>받을 수 있는 조건</h2>
       <ol>

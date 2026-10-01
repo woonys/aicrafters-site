@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <article className="doc">
+    <article className="narrow prose">
       <div className="crumbs">
         <Link href="/guides/">가이드</Link> › 15시간 미만
       </div>
-      <h1>주 15시간 미만 알바, 주휴수당 정말 못 받을까</h1>
+      <h1 className="t1">주 15시간 미만 알바, 주휴수당 정말 못 받을까</h1>
       <p className="meta">2026-10-01 기준 · 근로기준법 제18조 제3항</p>
 
       <p>
@@ -25,7 +25,7 @@ export default function Page() {
       </p>
 
       <h2>4주 평균 예시</h2>
-      <table>
+      <div className="table-wrap"><table>
         <thead>
           <tr><th>1주</th><th>2주</th><th>3주</th><th>4주</th><th>평균</th><th>주휴 규정</th></tr>
         </thead>
@@ -35,7 +35,7 @@ export default function Page() {
           <tr><td>10</td><td>15</td><td>10</td><td>15</td><td>12.5시간</td><td>적용 안 됨</td></tr>
           <tr><td>16</td><td>16</td><td>16</td><td>16</td><td>16시간</td><td>적용</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <p>
         둘째 줄처럼 어떤 주가 15시간보다 적어도 4주 평균이 15시간 이상이면 주휴 규정이 적용됩니다. 이렇게 주마다 시간이
         다른 경우에는 각 주의 금액 계산 방식이 사업장마다 다를 수 있습니다. 그래서{" "}

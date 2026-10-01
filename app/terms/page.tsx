@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <article className="doc">
-      <h1>이용약관</h1>
+    <article className="narrow prose">
+      <h1 className="t1">이용약관</h1>
       <p className="meta">시행일 2026-10-01</p>
       <h2>1. 목적</h2>
       <p>이 약관은 AI Crafters(이하 &lsquo;운영자&rsquo;)가 aicrafters.kr(이하 &lsquo;사이트&rsquo;)에서 제공하는 계산기와 정보의 이용 조건을 정합니다.</p>
