@@ -38,8 +38,16 @@ export default function Page() {
           <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a>
         </li>
       </ul>
-      <p>계산기에 입력한 값은 광고 스크립트를 포함해 어떤 외부 서비스에도 전달되지 않습니다.</p>
-      <h2>5. 문의처</h2>
+      <h2>5. 방문 분석 (Google Analytics)</h2>
+      <p>
+        사이트 개선을 위해 Google Analytics 4로 방문한 페이지, 유입 경로, 기기·브라우저 종류 같은 이용 통계를 수집합니다. 이
+        과정에서 Google은 쿠키를 사용하며, 이름이나 연락처처럼 개인을 직접 알아볼 수 있는 정보는 수집하지 않습니다. 수집을
+        원하지 않으면{" "}
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google 애널리틱스 차단 브라우저 부가기능</a>을
+        설치하거나 브라우저에서 쿠키를 차단할 수 있습니다.
+      </p>
+      <p>계산기에 입력한 값은 광고·분석 스크립트를 포함해 어떤 외부 서비스에도 전달되지 않습니다.</p>
+      <h2>6. 문의처</h2>
       <p>개인정보 보호책임자: 김재운 (woony.kim@aicrafters.kr)</p>
     </article>
   );

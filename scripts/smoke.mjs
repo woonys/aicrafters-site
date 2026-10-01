@@ -57,6 +57,7 @@ const adsTxt = await get("/ads.txt");
 check(adsTxt.status === 200 && adsTxt.body.toString().includes("pub-6190216749397593, DIRECT"), `/ads.txt ${adsTxt.status} pub ID 포함`);
 const home = (await get("/")).body.toString();
 check(home.includes("adsbygoogle.js?client=ca-pub-6190216749397593") && home.includes('name="google-adsense-account"'), "AdSense 스크립트·인증 메타 존재");
+check(home.includes("googletagmanager.com/gtag/js?id=G-2382S0SJFK"), "GA4 태그 존재");
 const ads = await get("/app-ads.txt");
 check(ads.type.startsWith("text/plain"), `/app-ads.txt content-type ${ads.type}`);
 
