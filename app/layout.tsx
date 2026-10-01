@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SITE_URL } from "@/lib/site";
+import { ADSENSE_CLIENT } from "@/lib/ads";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,6 +22,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Pretendard (SIL OFL). 사용하는 글자만 내려받는 dynamic subset */}
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
+        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
+        <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`} crossOrigin="anonymous" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"

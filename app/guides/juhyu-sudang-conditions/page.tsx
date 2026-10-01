@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Sources } from "@/components/Sources";
+import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "주휴수당 받는 조건 3가지와 헷갈리는 사례",
@@ -52,6 +53,8 @@ export default function Page() {
         많았지만, 지금 고용노동부 설명은 &lsquo;주휴일까지 근로관계가 유지되는가&rsquo;를 기준으로 합니다. 퇴사 주는 사례별로
         판단이 갈릴 수 있으니 고용노동부 고객상담센터(국번 없이 1350)에서 확인하는 것이 안전합니다.
       </p>
+
+      <AdSlot />
 
       <h2>자주 묻는 질문</h2>
       <h3>5인 미만 사업장도 주휴수당을 줘야 하나요?</h3>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Sources } from "@/components/Sources";
+import { AdSlot } from "@/components/AdSlot";
 
 export const metadata: Metadata = {
   title: "주 15시간 미만 알바, 주휴수당 정말 못 받을까 (4주 평균 계산 예시)",
@@ -42,6 +43,8 @@ export default function Page() {
         <Link href="/tools/juhyu-sudang/">주휴수당 계산기</Link>는 이 경우 금액을 내지 않고 &lsquo;판정 불가&rsquo;로
         안내합니다. 고용노동부 고객상담센터(국번 없이 1350)에서 근무표를 들고 확인하세요.
       </p>
+
+      <AdSlot />
 
       <h2>계약은 14시간인데 실제로는 매주 16시간 일하면?</h2>
       <p>
