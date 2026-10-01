@@ -10,7 +10,8 @@ export function SiteHeader() {
         </Link>
         <nav className="nav-links" aria-label="주요 메뉴">
           <Link href="/tools/">계산기</Link>
-          <Link href="/guides/">가이드</Link>
+          <Link href="/blog/">블로그</Link>
+          <Link href="/guides/" className="hide-sm">가이드</Link>
           <Link href="/about/" className="hide-sm">소개</Link>
         </nav>
       </div>

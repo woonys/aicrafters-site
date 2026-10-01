@@ -245,3 +245,28 @@ article.prose .notice + form, article.prose form { margin-top: 24px; }
 .ad-slot ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; }
 .ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) { margin: 40px 0; padding-top: 16px; border-top: 1px solid var(--grey-100); }
 .ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-label { display: block; }
+
+/* ---------- blog ---------- */
+.post-list { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 8px; }
+.post-item { display: grid; gap: 4px; padding: 20px; border-radius: var(--r-16); border: 1px solid var(--grey-100); text-decoration: none; transition: background-color 160ms var(--ease); }
+.post-item:hover { background: var(--grey-50); }
+.post-item .small { margin-top: 4px; }
+article.prose .post-body > * + * { margin-top: 16px; }
+.post-body h2 { font-size: 22px; line-height: 32px; font-weight: 700; color: var(--grey-900); margin-top: 48px; letter-spacing: -0.03em; }
+.post-body h3 { font-size: 18px; line-height: 28px; font-weight: 700; color: var(--grey-900); margin-top: 32px; }
+.post-body p, .post-body li { font-size: 17px; line-height: 1.8; color: var(--grey-700); }
+.post-body strong { color: var(--grey-900); }
+.post-body ul, .post-body ol { padding-left: 22px; }
+.post-body li + li { margin-top: 8px; }
+.post-body a { color: var(--brand-600); text-decoration: underline; text-underline-offset: 3px; }
+.post-body blockquote { border-left: 3px solid var(--brand-100); padding: 4px 0 4px 16px; color: var(--grey-700); }
+.post-body table { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+.post-body th { text-align: left; font-size: 13px; font-weight: 600; color: var(--grey-600); background: var(--grey-50); padding: 12px 14px; white-space: normal; line-height: 1.4; }
+.post-body td { padding: 14px; }
+.post-body td { padding: 14px 16px; border-top: 1px solid var(--grey-100); color: var(--grey-800); white-space: normal; line-height: 1.55; vertical-align: top; }
+.post-body td.num, .post-body th.num { white-space: nowrap; }
+.post-body .num { text-align: right; }
+.cta-card { margin-top: 40px; padding: 24px; border-radius: var(--r-20); background: var(--brand-50); display: grid; gap: 14px; }
+.faq + .faq { margin-top: 20px; }
+.faq h3 { font-size: 17px; line-height: 26px; font-weight: 700; color: var(--grey-900); margin-top: 20px; }
+.faq p { font-size: 16px; line-height: 1.75; color: var(--grey-700); margin-top: 6px; }

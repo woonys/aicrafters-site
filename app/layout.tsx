@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { SITE_URL } from "@/lib/site";
 import { ADSENSE_CLIENT } from "@/lib/ads";
+import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
+import { JsonLd, ORG_ID, SITE_ID } from "@/lib/jsonld";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,6 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <JsonLd data={{ "@type": "Organization", "@id": ORG_ID, name: "AI Crafters", alternateName: "에이아이크래프터스", url: SITE_URL, email: CONTACT_EMAIL, founder: { "@type": "Person", name: "김재운" } }} />
+        <JsonLd data={{ "@type": "WebSite", "@id": SITE_ID, name: "AI Crafters", url: SITE_URL, inLanguage: "ko-KR", publisher: { "@id": ORG_ID } }} />
       </body>
     </html>
   );

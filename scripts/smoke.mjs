@@ -9,7 +9,7 @@ import { extname, join } from "node:path";
 const pinned = JSON.parse(readFileSync(new URL("./legacy-hashes.json", import.meta.url)));
 const PAGES = [
   "/", "/tools/", "/tools/juhyu-sudang/", "/guides/", "/guides/juhyu-sudang-conditions/",
-  "/guides/juhyu-sudang-under-15-hours/", "/about/", "/contact/", "/terms/", "/site-privacy/",
+  "/guides/juhyu-sudang-under-15-hours/", "/blog/", "/about/", "/contact/", "/terms/", "/site-privacy/",
 ];
 const TYPES = { ".html": "text/html; charset=utf-8", ".txt": "text/plain; charset=utf-8", ".xml": "application/xml", ".js": "text/javascript", ".css": "text/css", ".json": "application/json" };
 
@@ -63,9 +63,12 @@ check(ads.type.startsWith("text/plain"), `/app-ads.txt content-type ${ads.type}`
 const missing = await get("/this-page-does-not-exist-9f3a/");
 check(missing.status === 404, `없는 경로 → ${missing.status}`);
 
+const rssRes = await get("/rss.xml");
+check(rssRes.status === 200 && rssRes.body.toString().includes("<rss"), `/rss.xml ${rssRes.status}`);
 const sm = (await get("/sitemap.xml")).body.toString();
 const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).pathname);
-check(locs.length === PAGES.length, `sitemap URL ${locs.length}개 (기대 ${PAGES.length})`);
+check(locs.length >= PAGES.length + 1, `sitemap URL ${locs.length}개 (고정 ${PAGES.length} + 블로그 글)`);
+for (const p of PAGES) check(locs.includes(p), `sitemap 에 ${p} 포함`);
 for (const p of locs) check((await get(p)).status === 200, `sitemap ${p}`);
 
 if (process.env.EXPECT_SHA) {

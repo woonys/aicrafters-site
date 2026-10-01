@@ -3,6 +3,14 @@ import Link from "next/link";
 import { JuhyuCalculator } from "./Calculator";
 import { Sources } from "@/components/Sources";
 import { AdSlot } from "@/components/AdSlot";
+import { JsonLd, ORG_ID, abs } from "@/lib/jsonld";
+
+const FAQ = [
+  { q: "주휴수당은 몇 시간부터 받을 수 있나요?", a: "4주 평균으로 1주 소정근로시간이 15시간 이상이어야 합니다. 15시간 미만이면 주휴일 규정이 적용되지 않습니다(근로기준법 제18조 제3항)." },
+  { q: "지각이나 조퇴를 하면 주휴수당이 없어지나요?", a: "아니요. 지각·조퇴를 했어도 출근한 날이므로 결근이 아닙니다. 연차휴가를 쓴 날도 결근이 아닙니다." },
+  { q: "주 40시간 넘게 일하면 주휴수당도 늘어나나요?", a: "아니요. 40시간을 넘는 부분은 연장근로라서 주휴수당 계산에 넣지 않습니다. 주휴수당은 최대 8시간분입니다." },
+  { q: "5인 미만 사업장도 주휴수당을 줘야 하나요?", a: "네. 주휴일 규정은 상시 4명 이하 사업장에도 적용됩니다(근로기준법 시행령 별표 1)." },
+];
 
 export const metadata: Metadata = {
   title: "주휴수당 계산기 (2026·2027 최저시급 반영)",
@@ -48,6 +56,14 @@ export default function Page() {
         </tbody>
       </table></div>
 
+      <h2>자주 묻는 질문</h2>
+      {FAQ.map((f) => (
+        <div key={f.q} className="faq">
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+
       <h2>받을 수 있는 조건</h2>
       <ol>
         <li>1주 소정근로시간이 15시간 이상 (4주 평균 기준)</li>
@@ -58,6 +74,24 @@ export default function Page() {
         자세한 설명은 <Link href="/guides/juhyu-sudang-conditions/">주휴수당 받는 조건 3가지</Link>와{" "}
         <Link href="/guides/juhyu-sudang-under-15-hours/">주 15시간 미만이면 정말 못 받을까</Link>에 정리했습니다.
       </p>
+      <JsonLd
+        data={{
+          "@type": "WebApplication",
+          name: "주휴수당 계산기",
+          url: abs("/tools/juhyu-sudang/"),
+          applicationCategory: "FinanceApplication",
+          operatingSystem: "Web",
+          inLanguage: "ko-KR",
+          offers: { "@type": "Offer", price: 0, priceCurrency: "KRW" },
+          publisher: { "@id": ORG_ID },
+        }}
+      />
+      <JsonLd
+        data={{
+          "@type": "FAQPage",
+          mainEntity: FAQ.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+        }}
+      />
     </article>
   );
 }
